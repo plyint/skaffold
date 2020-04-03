@@ -18,6 +18,6 @@ WORKDIR /skaffold
 COPY . .
 
 FROM builder as release
-ARG VERSION
+ARG VERSION=v1.7.0
 RUN make clean out/skaffold VERSION=$VERSION && mv out/skaffold /usr/bin/skaffold
 RUN skaffold credits -d /THIRD_PARTY_NOTICES
